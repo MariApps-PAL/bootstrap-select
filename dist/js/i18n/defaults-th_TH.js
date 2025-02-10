@@ -1,7 +1,5 @@
 /*!
- * Bootstrap-select v1.14.0-beta2 (https://developer.snapappointments.com/bootstrap-select)
- *
- * Copyright 2012-2021 SnapAppointments, LLC
+ * Copyright 2012-2025 SnapAppointments, LLC
  * Licensed under MIT (https://github.com/snapappointments/bootstrap-select/blob/master/LICENSE)
  */
 
@@ -9,18 +7,18 @@
   if (root === undefined && window !== undefined) root = window;
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module unless amdModuleId is set
-    define(["jquery"], function (a0) {
+    define(["jquery", "bootstrap"], function (a0) {
       return (factory(a0));
     });
   } else if (typeof module === 'object' && module.exports) {
     // Node. Does not work with strict CommonJS, but
     // only CommonJS-like environments that support module.exports,
     // like Node.
-    module.exports = factory(require("jquery"));
+    module.exports = factory(require("jquery"), require("bootstrap"));
   } else {
-    factory(root["jQuery"]);
+    factory(root["jQuery"], root["bootstrap"]);
   }
-}(this, function (jQuery) {
+}(this, function (jQuery, bootstrap) {
 
 (function ($) {
   $.fn.selectpicker.defaults = {
